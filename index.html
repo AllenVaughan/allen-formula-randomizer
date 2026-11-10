@@ -89,18 +89,76 @@ Click a button to get a recommendation.
 
 <script>
 
-const matches = [
+let matches = [];
 
-{
-name:"Steve Austin vs Bret Hart",
-event:"WrestleMania 13",
-promotion:"WWE",
-year:1997,
-tier:"S+",
-allenScore:99.4,
-legacyScore:100,
-why:"Often considered the greatest WWE match ever. The double turn changed wrestling history."
-},
+async function loadMatches(){
 
-{
-name:"CM Punk vs John Cena
+    const response =
+        await fetch("top75_matches.json");
+
+    const data =
+        await response.json();
+
+    matches = data.matches;
+}
+
+function pickRandom(array){
+
+    return array[
+        Math.floor(Math.random() * array.length)
+    ];
+
+}
+
+function randomMatch(){
+
+    if(matches.length === 0){
+
+        document.getElementById("result").innerHTML =
+            "Loading...";
+
+        return;
+    }
+
+    const match =
+        pickRandom(matches);
+
+    document.getElementById("result").innerHTML = `
+
+        <h2>${match.name}</h2>
+
+        <p>
+        <strong>Event:</strong>
+        ${match.event}
+        </p>
+
+        <p>
+        <strong>Promotion:</strong>
+        ${match.promotion}
+        </p>
+
+        <p>
+        <strong>Year:</strong>
+        ${match.year}
+        </p>
+
+        <p>
+        <strong>Tier:</strong>
+        ${match.tier}
+        </p>
+
+        <p>
+        <strong>Allen Score:</strong>
+        ${match.allenScore}
+        </p>
+
+        <h3>Why Watch</h3>
+
+        <p>${match.why}</p>
+
+    `;
+}
+
+loadMatches();
+
+</script>
