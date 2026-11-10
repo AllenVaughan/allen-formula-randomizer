@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Allen Formula Wrestling Randomizer</title>
 
@@ -35,6 +35,7 @@ button{
     margin:5px;
     border-radius:8px;
     cursor:pointer;
+    font-size:16px;
 }
 
 button:hover{
@@ -62,6 +63,11 @@ button:hover{
     font-weight:bold;
 }
 
+.loading{
+    text-align:center;
+    color:#ccc;
+}
+
 </style>
 </head>
 
@@ -71,94 +77,5 @@ button:hover{
 
 <div class="controls">
 
-<button onclick="randomMatch()">
-🎲 Random Match
-</button>
-
-<button onclick="hallOfFameMatch()">
-🏆 Hall of Fame Match
-</button>
-
-</div>
-
-<div id="result" class="card">
-
-Click a button to get a recommendation.
-
-</div>
-
-<script>
-
-let matches = [];
-
-async function loadMatches(){
-
-    const response =
-        await fetch("top75_matches.json");
-
-    const data =
-        await response.json();
-
-    matches = data.matches;
-}
-
-function pickRandom(array){
-
-    return array[
-        Math.floor(Math.random() * array.length)
-    ];
-
-}
-
-function randomMatch(){
-
-    if(matches.length === 0){
-
-        document.getElementById("result").innerHTML =
-            "Loading...";
-
-        return;
-    }
-
-    const match =
-        pickRandom(matches);
-
-    document.getElementById("result").innerHTML = `
-
-        <h2>${match.name}</h2>
-
-        <p>
-        <strong>Event:</strong>
-        ${match.event}
-        </p>
-
-        <p>
-        <strong>Promotion:</strong>
-        ${match.promotion}
-        </p>
-
-        <p>
-        <strong>Year:</strong>
-        ${match.year}
-        </p>
-
-        <p>
-        <strong>Tier:</strong>
-        ${match.tier}
-        </p>
-
-        <p>
-        <strong>Allen Score:</strong>
-        ${match.allenScore}
-        </p>
-
-        <h3>Why Watch</h3>
-
-        <p>${match.why}</p>
-
-    `;
-}
-
-loadMatches();
-
-</script>
+    <button onclick="randomMatch()">
+        🎲 Random Match
