@@ -1,37 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Allen Formula Wrestling Randomizer</title>
+
+<style>
+
+body{
+    background:#111;
+    color:white;
+    font-family:Arial, sans-serif;
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+h1{
+    color:gold;
+    text-align:center;
+}
+
+.controls{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+button{
+    background:#c8102e;
+    color:white;
+    border:none;
+    padding:12px 18px;
+    margin:5px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#e31837;
+}
+
+.card{
+    background:#222;
+    border-radius:12px;
+    padding:25px;
+    margin-top:20px;
+}
+
+.badge{
+    display:inline-block;
+    background:gold;
+    color:black;
+    padding:4px 10px;
+    border-radius:20px;
+    font-weight:bold;
+}
+
+.label{
+    color:gold;
+    font-weight:bold;
+}
+
+</style>
 </head>
 
 <body>
 
-<h1>Allen Formula Wrestling Randomizer</h1>
+<h1>🏆 Allen Formula Wrestling Randomizer</h1>
+
+<div class="controls">
 
 <button onclick="randomMatch()">
-Random Match
+🎲 Random Match
 </button>
 
-<p id="result"></p>
+<button onclick="hallOfFameMatch()">
+🏆 Hall of Fame Match
+</button>
+
+</div>
+
+<div id="result" class="card">
+
+Click a button to get a recommendation.
+
+</div>
 
 <script>
+
 const matches = [
-"Steve Austin vs Bret Hart",
-"CM Punk vs John Cena",
-"Kazuchika Okada vs Kenny Omega I"
-];
 
-function randomMatch() {
+{
+name:"Steve Austin vs Bret Hart",
+event:"WrestleMania 13",
+promotion:"WWE",
+year:1997,
+tier:"S+",
+allenScore:99.4,
+legacyScore:100,
+why:"Often considered the greatest WWE match ever. The double turn changed wrestling history."
+},
 
-const match =
-matches[
-Math.floor(Math.random() * matches.length)
-];
-
-document.getElementById("result").innerHTML =
-match;
-}
-</script>
-
-</body>
-</html>
+{
+name:"CM Punk vs John Cena
