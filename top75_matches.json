@@ -1,4 +1,37 @@
 {
-  "matches": []
+  "matches": [
+    {
+      "rank": 1,
+      "name": "Steve Austin vs Bret Hart",
+      "event": "WWE WrestleMania 13",
+      "promotion": "WWE",
+      "year": 1997,
+      "tier": "S+",
+      "allenScore": 99.4,
+      "legacyScore": 100,
+      "why": "Often considered the greatest WWE match ever."
+    },
+    {
+      "rank": 2,
+      "name": "The Undertaker vs Shawn Michaels",
+      "event": "WWE WrestleMania 25",
+      "promotion": "WWE",
+      "year": 2009,
+      "tier": "S+",
+      "allenScore": 98.1,
+      "legacyScore": 98,
+      "why": "A masterpiece of storytelling and near-falls."
+    },
+    {
+      "rank": 3,
+      "name": "CM Punk vs John Cena",
+      "event": "WWE Money in the Bank 2011",
+      "promotion": "WWE",
+      "year": 2011,
+      "tier": "S+",
+      "allenScore": 98.4,
+      "legacyScore": 98,
+      "why": "The defining match of the Summer of Punk."
+    }
+  ]
 }
-
