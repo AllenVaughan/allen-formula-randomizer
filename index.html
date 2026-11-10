@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Allen Formula Wrestling Randomizer</title>
+</head>
 
+<body>
+
+<h1>Allen Formula Wrestling Randomizer</h1>
+
+<button onclick="randomMatch()">
+Random Match
+</button>
+
+<p id="result"></p>
+
+<script>
+const matches = [
+"Steve Austin vs Bret Hart",
+"CM Punk vs John Cena",
+"Kazuchika Okada vs Kenny Omega I"
+];
+
+function randomMatch() {
+
+const match =
+matches[
+Math.floor(Math.random() * matches.length)
+];
+
+document.getElementById("result").innerHTML =
+match;
+}
+</script>
+
+</body>
+</html>
