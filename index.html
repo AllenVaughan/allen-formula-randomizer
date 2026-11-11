@@ -261,6 +261,12 @@ if(match.tier === "S+"){
 
 document.getElementById("result").innerHTML =
 
+"<div class='card'>" +
+
+"<div class='" + tierClass + "'>" +
+match.tier +
+"</div>" +
+
 "<h2>" + match.name + "</h2>" +
 
 "<p><span class='label'>Event:</span> " +
@@ -275,9 +281,7 @@ match.promotion +
 match.year +
 "</p>" +
 
-"<p><span class='" + tierClass + "'>Tier: " +
-match.tier +
-"</span></p>";
+"</div>";
 
 }
 
