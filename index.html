@@ -1,152 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Allen Formula Wrestling Randomizer</title>
 
 <style>
-
 body{
     background:#111;
     color:white;
     font-family:Arial,sans-serif;
-    max-width:900px;
-    margin:auto;
-    padding:20px;
-}
-
-h1{
-    color:gold;
     text-align:center;
-}
-
-.controls{
-    text-align:center;
-    margin-bottom:20px;
+    padding:40px;
 }
 
 button{
-    background:#c8102e;
-    color:white;
-    border:none;
-    padding:12px 18px;
-    margin:5px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
+    padding:12px 24px;
+    font-size:18px;
 }
-
-button:hover{
-    background:#e31837;
-}
-
-.card{
-    background:#222;
-    border-radius:12px;
-    padding:25px;
-    margin-top:20px;
-}
-
-.badge{
-    display:inline-block;
-    background:gold;
-    color:black;
-    padding:4px 10px;
-    border-radius:20px;
-    font-weight:bold;
-    margin-bottom:10px;
-}
-
-.label{
-    color:gold;
-    font-weight:bold;
-}
-
 </style>
+
 </head>
 
 <body>
 
 <h1>🏆 Allen Formula Wrestling Randomizer</h1>
 
-<div class="controls">
+<button onclick="randomMatch()">
+🎲 Random Match
+</button>
 
-    <button onclick="randomMatch()">
-        🎲 Random Match
-    </button>
-
-</div>
-
-<div id="result" class="card">
-
-    Loading matches...
-
-</div>
+<p id="result">
+Click Random Match
+</p>
 
 <script>
 
-let matches = [];
-
-async function loadMatches(){
-
-    try {
-
-        const response =
-            await fetch("top75_matches.json");
-
-        const data =
-            await response.json();
-
-        matches = data.matches;
-
-        document.getElementById("result").innerHTML = `
-            <h2>Ready!</h2>
-            <p>Loaded ${matches.length} matches.</p>
-            <p>Click Random Match.</p>
-        `;
-
-    } catch(error){
-
-        console.error(error);
-
-        document.getElementById("result").innerHTML = `
-            <h2>Error Loading Matches</h2>
-            <p>${error.message}</p>
-        `;
-    }
-
-}
-
-function pickRandom(array){
-
-    return array[
-        Math.floor(Math.random() * array.length)
-    ];
-
-}
+const matches = [
+"Steve Austin vs Bret Hart",
+"CM Punk vs John Cena",
+"Kazuchika Okada vs Kenny Omega"
+];
 
 function randomMatch(){
 
-    if(matches.length === 0){
+const match =
+matches[
+Math.floor(
+Math.random() * matches.length
+)
+];
 
-        document.getElementById("result").innerHTML =
-            "<h2>No matches loaded.</h2>";
+document.getElementById("result").innerHTML =
+match;
 
-        return;
+}
 
-    }
+</script>
 
-    const match =
-        pickRandom(matches);
-
-    document.getElementById("result").innerHTML = `
-
-        <div class="badge">
-            ${match.tier}
-        </div>
-
-        <h2>
-     
+</body>
+</html>
