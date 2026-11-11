@@ -40,36 +40,87 @@ const matches = [
   name:"Steve Austin vs Bret Hart",
   event:"WrestleMania 13",
   promotion:"WWE",
-  year:1997
+  year:1997,
+  tier:"S+"
 },
 
 {
   name:"The Undertaker vs Shawn Michaels",
   event:"WrestleMania 25",
   promotion:"WWE",
-  year:2009
+  year:2009,
+  tier:"S+"
 },
 
 {
   name:"The Undertaker vs Shawn Michaels (Hell in a Cell)",
   event:"Badd Blood",
   promotion:"WWE",
-  year:1997
+  year:1997,
+  tier:"S+"
 },
 
 {
   name:"CM Punk vs John Cena",
   event:"Money in the Bank",
   promotion:"WWE",
-  year:2011
+  year:2011,
+  tier:"S+"
 },
 
 {
   name:"Hulk Hogan vs The Rock",
   event:"WrestleMania X8",
   promotion:"WWE",
-  year:2002
-}
+  year:2002,
+  tier:"S+"
+},
+
+{
+  name:"TLC II",
+  event:"WrestleMania X-Seven",
+  promotion:"WWE",
+  year:2001,
+  tier:"S+"
+},
+
+{
+  name:"Randy Savage vs Ricky Steamboat",
+  event:"WrestleMania III",
+  promotion:"WWE",
+  year:1987,
+  tier:"S+"
+},
+
+{
+  name:"The Undertaker vs Triple H",
+  event:"WrestleMania 28",
+  promotion:"WWE",
+  year:2012,
+  tier:"S+"
+},
+
+{
+  name:"Kurt Angle vs Shawn Michaels",
+  event:"WrestleMania 21",
+  promotion:"WWE",
+  year:2005,
+  tier:"S+"
+},
+
+{
+  name:"Chris Benoit vs Shawn Michaels vs Triple H",
+  event:"WrestleMania XX",
+  promotion:"WWE",
+  year:2004,
+  tier:"S+"
+},
+
+{
+  name:"Daniel Bryan vs Batista vs Randy Orton",
+  event:"WrestleMania 30",
+  promotion:"WWE",
+  year:201
     
 ];
 
@@ -90,7 +141,9 @@ document.getElementById("result").innerHTML =
 
 "<p>Promotion: " + match.promotion + "</p>" +
 
-"<p>Year: " + match.year + "</p>";
+"<p>Year: " + match.year + "</p>" +
+
+"<p>Tier: " + match.tier + "</p>";
 
 }
 
