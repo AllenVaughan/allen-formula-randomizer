@@ -263,11 +263,6 @@ document.getElementById("result").innerHTML =
 
 "<div class='card'>" +
 
-"<p><span class='label'>Tier:</span> " +
-"<span class='" + tierClass + "'>" +
-match.tier +
-"</span></p>" +
-
 "<h2>" + match.name + "</h2>" +
 
 "<p><span class='label'>Event:</span> " +
@@ -282,8 +277,12 @@ match.promotion +
 match.year +
 "</p>" +
 
-"</div>";
+"<p><span class='label'>Tier:</span> " +
+"<span class='" + tierClass + "'>" +
+match.tier +
+"</span></p>" +
 
+"</div>";
 }
 
 </script>
