@@ -230,17 +230,31 @@ Math.random() * matches.length
 )
 ];
 
+let tierClass = "tier-s";
+
+if(match.tier === "S+"){
+    tierClass = "tier-splus";
+}
+
 document.getElementById("result").innerHTML =
 
 "<h2>" + match.name + "</h2>" +
 
-"<p>Event: " + match.event + "</p>" +
+"<p><span class='label'>Event:</span> " +
+match.event +
+"</p>" +
 
-"<p>Promotion: " + match.promotion + "</p>" +
+"<p><span class='label'>Promotion:</span> " +
+match.promotion +
+"</p>" +
 
-"<p>Year: " + match.year + "</p>" +
+"<p><span class='label'>Year:</span> " +
+match.year +
+"</p>" +
 
-"<p>Tier: " + match.tier + "</p>";
+"<p><span class='" + tierClass + "'>Tier: " +
+match.tier +
+"</span></p>";
 
 }
 
